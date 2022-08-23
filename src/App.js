@@ -5,6 +5,7 @@ import PrivateRoute from './components/PrivateRoute';
 
 import Home from './components/Home';
 import Login  from './components/Login';
+import Layout  from './components/Layout';
 
 
 function App() {
@@ -26,7 +27,11 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={
+            <Layout>
+              <Login />
+            </Layout>
+          } />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
